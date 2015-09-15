@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.Instrumentation;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,40 @@ public class LonelyTwitterActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		//ImportantTweet tweet = new ImportantTweet("blah");
+		//tweet.isImportant();
+
+        //Tweet tweet = new ImportantTweet("blah");
+        //tweet.getText();
+
+        //Object tweet = new ImportantTweet("blah");
+        //tweet.getText(); // will not allow us to call, needs something that all objects have
+
+        Tweet tweet = new ImportantTweet("blah");
+        try {
+            tweet.setText("blaaah");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+            // remember to throw an error here
+        }
+        tweet.isImportant();
+
+        //ArrayList<Tweet> tweetList;
+        ArrayList<Object> anythingList;
+
+
+
+        /* Mood */
+        Mood mood = new HappyMood("yolo");
+        try {
+            mood.setCurrentmood("lol");
+        } catch (IOException f) {
+            throw new RuntimeException(f);
+        }
+        mood.isHappy();
+
+
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
