@@ -1,0 +1,23 @@
+git remote add joshuas <url>
+
+git fetch joshuas
+
+git add/commit
+
+git branch
+
+git checkout joshuas/f15tuesday -B f15tuesday
+
+git branch
+
+git push -u origin
+
+
+
+
+
+
+
+
+
+

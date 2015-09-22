@@ -43,6 +43,7 @@ public class LonelyTwitterActivity extends Activity {
 
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
+        Button clearButton = (Button) findViewById(R.id.clear);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,14 @@ public class LonelyTwitterActivity extends Activity {
                 saveInFile();
 			}
 		});//)
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                tweets.clear();
+                adapter.notifyDataSetChanged();
+                clearInFile();
+            }
+        });
     }
 
 	@Override
@@ -120,4 +129,19 @@ public class LonelyTwitterActivity extends Activity {
             throw new RuntimeException(e);
 		}
 	}
+
+    private void clearInFile() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, 0);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(' ', writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
