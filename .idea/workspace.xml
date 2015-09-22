@@ -32,11 +32,12 @@
       <file leaf-file-name="LonelyTwitterActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6605505">
-              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5045872">
+              <caret line="134" column="49" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="49" />
               <folding>
                 <element signature="e#917#924#0" expanded="true" />
                 <element signature="e#1530#1883#0" expanded="true" />
+                <element signature="e#1882#1883#0" expanded="true" />
                 <element signature="e#1928#2171#0" expanded="true" />
                 <element signature="e#2170#2171#0" expanded="true" />
               </folding>
@@ -1881,11 +1882,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6605505">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5045872">
+          <caret line="134" column="49" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="49" />
           <folding>
             <element signature="e#917#924#0" expanded="true" />
             <element signature="e#1530#1883#0" expanded="true" />
+            <element signature="e#1882#1883#0" expanded="true" />
             <element signature="e#1928#2171#0" expanded="true" />
             <element signature="e#2170#2171#0" expanded="true" />
           </folding>
