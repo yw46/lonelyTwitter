@@ -59,6 +59,7 @@ public class TweetList {
         return Boolean.FALSE;
     }
 
+    // returns a string of which tweet is removed
     public String removeTweet(Tweet tweet) {
         int n = tweets.size();
         int i;
