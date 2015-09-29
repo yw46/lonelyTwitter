@@ -59,17 +59,18 @@ public class TweetList {
         return Boolean.FALSE;
     }
 
-    public void removeTweet(Tweet tweet) {
+    public String removeTweet(Tweet tweet) {
         int n = tweets.size();
         int i;
-        //Tweet ht = new NormalTweet("AAA");
+        Tweet ht = new NormalTweet("AAA");
         for (i = 0; i < n; i = i + 1) {
             if (tweets.get(i).getText() == tweet.getText()) {
-                tweets.remove(i); // ht = ~
-                //return ht.getText();
+                ht = tweets.remove(i); // ht = ~
+                return ht.getText();
             }
         }
-        //return ht.getText();
+        return ht.getText();
+
     }
 
     public int getCount() {

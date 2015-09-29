@@ -72,8 +72,8 @@ public class TweetListTest extends ActivityInstrumentationTestCase2 {
 
         // removeTweet()
         tweet = new NormalTweet("test");
-        list.removeTweet(tweet); // "test" removed, String temp = ~
-        //assertSame(temp, "test");
+        String temp = list.removeTweet(tweet); // "test" removed, String temp = ~
+        assertSame(temp, "test");
 
         // getCount()
         assertEquals(list.getCount(), 1);
