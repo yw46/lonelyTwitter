@@ -49,7 +49,7 @@ public class LonelyTwitterActivity extends Activity {
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				setResult(RESULT_OK);
+				setResult(RESULT_OK); // controller
 				String text = bodyText.getText().toString(); // controller
 				//saveInFile(text, new Date(System.currentTimeMillis()));
                 tweets.add(new NormalTweet(text)); // controller
@@ -61,7 +61,7 @@ public class LonelyTwitterActivity extends Activity {
 
         clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                setResult(RESULT_OK);
+                setResult(RESULT_OK); // controller
                 tweets.clear(); // controller
                 adapter.notifyDataSetChanged(); // view
                 clearInFile(); // model
@@ -74,7 +74,7 @@ public class LonelyTwitterActivity extends Activity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart(); // view
-        loadFromFile(); // model
+        loadFromFile(); // controller
 		//String[] tweets = loadFromFile();
 		//ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 		//ArrayAdapter<Tweet> adapter = new ArrayAdapter<Tweet>(this,
@@ -108,7 +108,7 @@ public class LonelyTwitterActivity extends Activity {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
-            throw new RuntimeException(e); // controller
+            throw new RuntimeException(e); // view
 		}
 		//return tweets.toArray(new String[tweets.size()]);
 	}
@@ -127,11 +127,11 @@ public class LonelyTwitterActivity extends Activity {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
-            throw new RuntimeException(e); // controller
+            throw new RuntimeException(e); // view
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
-            throw new RuntimeException(e); // controller
+            throw new RuntimeException(e); // view
 		}
 	}
     private void clearInFile() {
@@ -143,9 +143,9 @@ public class LonelyTwitterActivity extends Activity {
             writer.flush(); // model
             fos.close(); // model
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e); // controller
+            throw new RuntimeException(e); // view
         } catch (IOException e) {
-            throw new RuntimeException(e); // controller
+            throw new RuntimeException(e); // view
         }
     }
 }
