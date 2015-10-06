@@ -8,13 +8,17 @@ import java.util.ArrayList;
 /**
  * Created by yishuo on 9/29/15.
  */
-public class TweetList {
+
+// want to make observable
+public class TweetList implements MyObserverable, MyObserver{
     private Tweet mostRecentTweet;
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public void add(Tweet tweet) {
         mostRecentTweet = tweet;
         tweets.add(tweet);
+        tweet.addObserver(this);
+        notifyAllObservers();
     }
 
     public  Tweet getMostRecentTweet() {
@@ -25,6 +29,7 @@ public class TweetList {
         return tweets.size();
     }
 
+    // lab 4
     /*
     addTweet() -- should throw an IllegalArgumentException when one tries to add a duplicate tweet
     ArrayList<Tweet> getTweets() -- sould return a list of tweets in chronological order
@@ -78,4 +83,20 @@ public class TweetList {
         return tweets.size();
     }
 
+    // lab 5
+    private volatile ArrayList<MyObserver> observers = new ArrayList<MyObserver>();
+
+    public void addObserver(MyObserver observer) {
+        observers.add(observer);
+    }
+
+    public void notifyAllObservers() {
+        for (MyObserver observer : observers) {
+            observer.myNotify(this);
+        }
+    }
+
+    public void myNotify(MyObserverable observerable) {
+        notifyAllObservers();
+    }
 }
