@@ -32,6 +32,7 @@ public class LonelyTwitterActivity extends Activity {
     private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
     private ArrayAdapter<Tweet> adapter; // = new ArrayAdapter<Tweet>(this,
                                          // R.layout.list_item, tweets);
+    private Button saveButton;
 
 
 	/** Called when the activity is first created. */
@@ -42,7 +43,7 @@ public class LonelyTwitterActivity extends Activity {
 		setContentView(R.layout.main); // view
 
 		bodyText = (EditText) findViewById(R.id.body); // view
-		Button saveButton = (Button) findViewById(R.id.save); // view
+		saveButton = (Button) findViewById(R.id.save); // view
         Button clearButton = (Button) findViewById(R.id.clear); // view
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList); // view
 
@@ -70,7 +71,23 @@ public class LonelyTwitterActivity extends Activity {
 
     }
 
-	@Override
+    public ArrayList<Tweet> getTweets() {
+        return tweets;
+    }
+
+    public EditText getBodyText() {
+        return bodyText;
+    }
+
+    public Button getSaveButton() {
+        return saveButton;
+    }
+
+    public ListView getOldTweetsList() {
+        return oldTweetsList;
+    }
+
+    @Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart(); // view
